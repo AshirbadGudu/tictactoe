@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Tic Tac Toe</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            background: linear-gradient(46deg, #23e2e9, #e67878);
+            color: #fff;
+        }
+
+        .block {
+            font-family: cursive;
+            width: 5vw;
+            height: 15vh;
+            vertical-align: middle !important;
+            font-size: 4vh !important;
+            border-color: rgb(0, 0, 0) !important;
+            border-width: 2px !important;
+        }
+
+        .replay {
+            border: none;
+            outline: none;
+            padding: 5px 15px;
+            border-radius: 32px;
+            text-transform: uppercase;
+            color: #fff;
+            background: transparent;
+            box-shadow: .5px 1px 1px 1px #fff;
+            transition: .4s;
+        }
+
+        .replay:hover {
+            cursor: pointer;
+            box-shadow: .1px -.51px 1px 1px #fff;
+        }
+
+        .replay:focus {
+            border: none;
+            outline: none;
+            box-shadow: -.2px .1px .1px .1px #fff;
+        }
+
+        .x-win,
+        .o-win,
+        .draw {
+            position: absolute;
+            width: 80%;
+            top: 50vh;
+            left: 10%;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="x-win alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>X Win The Match</strong>
+    </div>
+    <div class="o-win alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>0 Win The Match</strong>
+    </div>
+    <div class="draw alert alert-primary alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Match Draw</strong>
+    </div>
+
+    <header>
+        <div class="jumbotron rounded-0 text-center">
+            <h1 class="display-3">Tic Tac Toe</h1>
+            <button class="replay">Replay</button>
+        </div>
+    </header>
+    <main style="min-height: 50vh;" class="container d-flex justify-content-center align-items-center">
+        <table class="table">
+            <tr>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+            </tr>
+            <tr>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+            </tr>
+            <tr>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+                <td class="text-center border block"></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer class="jumbotron rounded-0">
+        <div class="d-flex justify-content-center">
+            <div>
+                <a target="_blank" href="https://www.facebook.com/ashirbad.panigrahi.792?ref=bookmarks" class="mx-2"><i
+                        class="social fab fa-facebook fa-2x text-white"></i></a>
+            </div>
+            <div>
+                <a target="_blank" href="https://www.instagram.com/ashirbadapanigrahi/" class="mx-2"><i
+                        class="social fab fa-instagram fa-2x text-white" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a target="_blank"
+                    href="https://in.linkedin.com/in/ashirbad-panigrahi-065689170?trk=people-guest_people_search-card"
+                    class="mx-2"><i class="social fab fa-linkedin text-white fa-2x"></i></a>
+            </div>
+            <div>
+                <a target="_blank" href="https://github.com/AshirbadGudu" class="mx-2"><i
+                        class="social fab fa-github fa-2x text-white "></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="copy d-flex justify-content-center lead">
+            2020 &copy; All Rights Reserved
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>
+        $(".alert").alert();
+        let countForDraw = 0;
+        let notWin = true;
+        let replay = document.querySelector('.replay');
+        let blocks = document.querySelectorAll('.block');
+        let gameMsg = document.querySelectorAll('.game-msg');
+        let currentPlayer = 'X';
+        // Removing unnecessary Borders
+        blocks[0].setAttribute('style', 'border:0px !important');
+        blocks[1].setAttribute('style', 'border-top:0px !important');
+        blocks[2].setAttribute('style', 'border:0px !important');
+        blocks[3].setAttribute('style', 'border-left:0px !important');
+        blocks[5].setAttribute('style', 'border-right:0px !important');
+        blocks[6].setAttribute('style', 'border:0px !important');
+        blocks[7].setAttribute('style', 'border-bottom:0px !important');
+        blocks[8].setAttribute('style', 'border:0px !important');
+
+        blocks.forEach(block => {
+            block.addEventListener('click', () => {
+
+                if (block.innerText == '' && currentPlayer == 'X') {
+                    block.innerText = 'X';
+                    currentPlayer = '0';
+                    countForDraw += 1;
+                } else {
+                    if (block.innerText == '' && currentPlayer == '0') {
+                        block.innerText = '0';
+                        currentPlayer = 'X';
+                        countForDraw += 1;
+                    } else {
+                        if (block.innerText == 'X' || block.innerText == '0') {
+                            alert('Already Selected! Please Choose another block');
+                        }
+                    }
+                }
+                // checking conditions for the wining situation
+                checkWin(0, 1, 2);
+                checkWin(0, 3, 6);
+                checkWin(0, 4, 8);
+                checkWin(3, 4, 5);
+                checkWin(6, 7, 8);
+                checkWin(1, 4, 7);
+                checkWin(3, 5, 8);
+                checkWin(2, 5, 8);
+                checkWin(2, 4, 6);
+                // condition for draw match
+                if (countForDraw == 9 && notWin) {
+                    document.querySelector('.draw').style.opacity = '1';
+                    document.querySelector('.draw').style.pointerEvents = 'all';
+                }
+            });
+        });
+        // Replay Btn
+        replay.addEventListener('click', () => {
+            notWin = true;
+            currentPlayer = 'X';
+            countForDraw = 0;
+            blocks.forEach(block => {
+                block.innerText = '';
+                block.style.pointerEvents = 'all';
+                block.style.background = "#fff";
+            });
+        });
+        // Check The wining conditions
+        function checkWin(i, j, k) {
+            if (blocks[i].innerText == 'X' && blocks[j].innerText == 'X' && blocks[k].innerText == 'X') {
+                document.querySelector('.x-win').style.opacity = '1';
+                document.querySelector('.x-win').style.pointerEvents = 'all';
+                blocks[i].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[j].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[k].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[i].style.color = '#fff';
+                blocks[j].style.color = '#fff';
+                blocks[k].style.color = '#fff';
+                // Off all pointer events after win the match
+                blocks.forEach(block => {
+                    block.style.pointerEvents = 'none';
+                });
+                notWin = false;
+            }
+            if (blocks[i].innerText == '0' && blocks[j].innerText == '0' && blocks[k].innerText == '0') {
+                document.querySelector('.o-win').style.opacity = '1';
+                document.querySelector('.o-win').style.pointerEvents = 'all';
+                blocks[i].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[j].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[k].style.background = 'linear-gradient(rgb(35, 233, 172), rgb(35, 233, 172))';
+                blocks[i].style.color = '#fff';
+                blocks[j].style.color = '#fff';
+                blocks[k].style.color = '#fff';
+                // Off all pointer events after win the match
+                blocks.forEach(block => {
+                    block.style.pointerEvents = 'none';
+                });
+                notWin = false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
